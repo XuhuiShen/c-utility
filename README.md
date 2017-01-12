@@ -1,2 +1,2 @@
 # c-utility
-Some useful utility function for linux c. 
+Some useful utility functions for linux c. 
