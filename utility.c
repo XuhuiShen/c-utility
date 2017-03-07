@@ -28,7 +28,7 @@ void* open_so(const char *path)
 
 void load_user_so(int start_i, int end_i, char *argv[])
 {
-				for (; start_i < end_i; start_i++){
+				for (; start_i < end_i; start_i++) {
 								if (!open_so(argv[start_i])) {
 												debug("can't load: %s\n", argv[start_i]);
 												exit(-1);
@@ -56,11 +56,11 @@ char *dirname(const char *path)
 				char *dirname = xmalloc(len + 100);
 
 				int i = len;
-				while (*(path + i - 1) == '/' && len >1)
+				while (*(path + i - 1) == '/' && len > 1)
 								i--;
 				for (; i > 0; i--) {
 								if (*(path + i - 1) == '/' &&
-												(len == 1 || *(path + i -2) != '/'))
+												(len == 1 || *(path + i - 2) != '/'))
 												break;
 				}
 				if (i == 0)
