@@ -17,7 +17,7 @@ void *xcalloc(size_t nmemb, size_t size)
 	return ret;
 }
 
-void* open_so(const char *path)
+void *open_so(const char *path)
 {
 	int flag = RTLD_LAZY | RTLD_GLOBAL | RTLD_DEEPBIND;
 	void *h = dlopen(path, flag);
@@ -36,7 +36,7 @@ void load_user_so(int start_i, int end_i, char *argv[])
 	}
 }
 
-void* dlsym_safe(void *so_handle, const char *sym)
+void *dlsym_safe(void *so_handle, const char *sym)
 {
 	dlerror(); /* clear old error conditions */
 	void *ret = dlsym(so_handle, sym);
